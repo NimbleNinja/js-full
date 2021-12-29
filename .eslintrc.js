@@ -20,5 +20,8 @@ module.exports = {
     'import/prefer-default-export': 0,
     'prefer-template': 0,
     'prettier/prettier': ['error', { singleQuote: true, parser: 'flow' }],
+    allowForLoopAfterthoughts: true,
+    'guard-for-in': 0,
+    'no-restricted-syntax': 0,
   },
 };
