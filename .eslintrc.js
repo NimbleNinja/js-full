@@ -23,5 +23,9 @@ module.exports = {
     allowForLoopAfterthoughts: true,
     'guard-for-in': 0,
     'no-restricted-syntax': 0,
+    // lesson_9 task_4
+    'prefer-object-spread': 0,
+    'no-param-reassign': 0,
+    //
   },
 };
