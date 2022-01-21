@@ -156,8 +156,8 @@
 
 // task_7
 
-const getTotalRevenue = transactions =>
-  [...transactions].reduce((sum, transaction) => sum + transaction.amount, 0);
+//const getTotalRevenue = transactions =>
+//  [...transactions].reduce((sum, transaction) => sum + transaction.amount, 0);
 
 // examples
 //const dayTransactions = [
@@ -168,3 +168,133 @@ const getTotalRevenue = transactions =>
 
 //console.log(getTotalRevenue(dayTransactions)); // ==> 310
 //console.log(dayTransactions);
+
+// дополнительные задания -------------------------------------
+// task_1 -----------------------------------------------------
+
+/* eslint-disable prefer-object-spread */
+/* eslint-disable no-param-reassign */
+
+/* В решения этой задачи используется метод Object.assign. В реальных проектах для такой задачи
+ * лучше использовать spread опертор - это самый современный подход
+ *
+ * Так же плохой подход - мутировать входящие параметры функции
+ *
+ * Задачу мы делаем для практики и демонстрационных целей, поэтому чтобы eslint не ругался на эту ошибку,
+ * для этой задачи он отключен аннотацией eslint-disable
+ * */
+
+//function addPropertyV1(obj, key, value) {
+//  obj[key] = value;
+//  return obj;
+//}
+
+//function addPropertyV2(obj, key, value) {
+//  return Object.assign(obj, { [key]: value });
+//}
+
+//function addPropertyV3(obj, key, value) {
+//  return Object.assign({ [key]: value }, obj);
+//}
+
+//function addPropertyV4(obj, key, value) {
+//  return { ...obj, [key]: value };
+//}
+
+// put your code here
+
+// put your code here
+
+// put your code here
+
+// examples
+//const transaction = {
+//  value: 170,
+//};
+//console.log(transaction); // ==> { value: 170, currency: 'USD' }
+//console.log(addPropertyV4(transaction, 'currency', 'USD'));
+
+// task_2
+
+//'use strict';
+
+//function buildObject(keysList, valuesList) {
+//  return keysList.reduce((obj, key, index) => {
+//    return { ...obj, [key]: valuesList[index] };
+//  }, {});
+//}
+
+//// examples
+//const keys = ['name', 'address', 'age'];
+//const values = ['Bob', 'Ukraine', 34];
+//const result = buildObject(keys, values); // ==> { name: 'Bob', address: 'Ukraine', age: 34 }
+//console.log(result);
+
+// task_3
+
+//function compareObjects(obj1, obj2) {
+//  const keys1 = Object.keys(obj1);
+//  const keys2 = Object.keys(obj2);
+
+//  if (keys1.length !== keys2.length) {
+//    return false;
+//  } else {
+//    return keys1.reduce(
+//      (result, key) => result && obj1[key] === obj2[key],
+//      true
+//    );
+//  }
+//}
+
+//// examples
+//const obj1 = {
+//  name: 'Tom',
+//  age: 17,
+//};
+
+//const obj2 = {
+//  age: 17,
+//  name: 'Bob',
+//};
+
+//const obj3 = {
+//  name: 'Bob',
+//  age: 17,
+//  student: false,
+//};
+
+//const obj4 = {
+//  age: 17,
+//  name: 'Tom',
+//};
+
+//console.log(compareObjects(obj1, obj4));
+
+//console.log(compareObjects(obj1, obj2)); // ==> false
+//console.log(compareObjects(obj2, obj3)); // ==> false
+//console.log(compareObjects(obj1, obj4)); // ==> true
+
+// task_4
+
+const getCustomersList = obj =>
+  Object.keys(obj)
+    .map(user => ({ ...obj[user], id: user }))
+    .sort((a, b) => a.age - b.age);
+
+const customers = {
+  'customer-id-1': {
+    name: 'William',
+    age: 54,
+  },
+  'customer-id-2': {
+    name: 'Tom',
+    age: 17,
+  },
+  'customer-id-3': {
+    name: 'Tom',
+    age: 10,
+  },
+};
+
+console.log(getCustomersList(customers));
+console.log(customers);
