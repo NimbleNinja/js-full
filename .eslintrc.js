@@ -26,6 +26,5 @@ module.exports = {
     // lesson_9 task_4
     'prefer-object-spread': 0,
     'no-param-reassign': 0,
-    //
   },
 };
