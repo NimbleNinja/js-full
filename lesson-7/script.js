@@ -23,8 +23,6 @@
 
 // task_6
 
-//const reverseArray = arr => (Array.isArray(arr) ? [...arr].reverse() : null);
-
 // task_7
 
 //const increaseEvenEl = (arr, delta) =>
@@ -35,12 +33,6 @@
 //const cloneArr = arr => (Array.isArray(arr) ? [...arr] : null);
 
 // task_9
-
-//const withdraw = (clients, balances, client, amount) => {
-//  const index = clients.indexOf(client);
-
-//  return balances[index] >= amount ? (balances[index] -= amount) : -1;
-//};
 
 // task_10
 
