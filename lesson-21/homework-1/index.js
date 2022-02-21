@@ -17,10 +17,10 @@ export function getTitleElement() {
   return element;
 }
 
-// inp: type (string)
+// inp: none
 // return: element
-export function getInputElement(type) {
-  const element = document.querySelector(`input[type=${type}]`);
+export function getInputElement() {
+  const element = document.querySelector(`input[type="text"]`);
   console.dir(element);
 
   return element;
