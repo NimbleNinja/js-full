@@ -15,5 +15,3 @@ export function manageClasses() {
     four.classList.add('another-class');
   }
 }
-
-manageClasses();
