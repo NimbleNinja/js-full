@@ -20,7 +20,7 @@ const formElem = document.querySelector('.login-form');
 // input: string
 // return: bollean
 const isEmail = value =>
-  value.includes('@') ? undefined : 'Sould be an email';
+  value.includes('@') ? undefined : 'Should be an email';
 
 // input: string
 // return: boolean
