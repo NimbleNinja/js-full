@@ -20,33 +20,31 @@ const handleClick = (color, text) => {
   elementsList.innerHTML += `<span style="color: ${color}; margin-left: 8px">${text}</span>`;
 };
 
-const elementDivSolving = () => handleClick('grey', 'DIV');
-const elementPSolving = () => handleClick('grey', 'P');
-const elementSpanSolving = () => handleClick('grey', 'SPAN');
+const elementDivSolving = handleClick.bind(null, 'grey', 'DIV');
+const elementPSolving = handleClick.bind(null, 'grey', 'P');
+const elementSpanSolving = handleClick.bind(null, 'grey', 'SPAN');
 
-const elementDivBubling = () => handleClick('green', 'DIV');
-const elementPBubling = () => handleClick('green', 'P');
-const elementSpanBubling = () => handleClick('green', 'SPAN');
+const elementDivBubling = handleClick.bind(null, 'green', 'DIV');
+const elementPBubling = handleClick.bind(null, 'green', 'P');
+const elementSpanBubling = handleClick.bind(null, 'green', 'SPAN');
 
 function attachHandlers() {
   elementDiv.addEventListener('click', elementDivSolving, true);
-  elementDiv.addEventListener('click', elementDivBubling);
-
   elementP.addEventListener('click', elementPSolving, true);
-  elementP.addEventListener('click', elementPBubling);
-
   elementSpan.addEventListener('click', elementSpanSolving, true);
+
+  elementDiv.addEventListener('click', elementDivBubling);
+  elementP.addEventListener('click', elementPBubling);
   elementSpan.addEventListener('click', elementSpanBubling);
 }
 
 function removeHandlers() {
   elementDiv.removeEventListener('click', elementDivSolving, true);
-  elementDiv.removeEventListener('click', elementDivBubling);
-
   elementP.removeEventListener('click', elementPSolving, true);
-  elementP.removeEventListener('click', elementPBubling);
-
   elementSpan.removeEventListener('click', elementSpanSolving, true);
+
+  elementDiv.removeEventListener('click', elementDivBubling);
+  elementP.removeEventListener('click', elementPBubling);
   elementSpan.removeEventListener('click', elementSpanBubling);
 }
 
@@ -54,7 +52,7 @@ function clearElementsList() {
   elementsList.innerHTML = '';
 }
 
-attachHandlersButton.addEventListener('click', () => attachHandlers());
-removeHandlersButton.addEventListener('click', () => removeHandlers());
+attachHandlersButton.addEventListener('click', attachHandlers);
+removeHandlersButton.addEventListener('click', removeHandlers);
 
 clearButton.addEventListener('click', clearElementsList);
