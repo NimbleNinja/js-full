@@ -52,6 +52,10 @@ function clearElementsList() {
   elementsList.innerHTML = '';
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  attachHandlers();
+});
+
 attachHandlersButton.addEventListener('click', attachHandlers);
 removeHandlersButton.addEventListener('click', removeHandlers);
 
