@@ -53,6 +53,12 @@ const getSector = () => {
 arenaElem.innerHTML = getSector();
 
 const arenaHandler = event => {
+  const isSeat = event.target.classList.contains('sector__seat');
+
+  if (!isSeat) {
+    return;
+  }
+
   const seatNumber = event.target.dataset.seatNumber;
   const lineNumber = event.target.closest('.sector__line').dataset.lineNumber;
   const sectorNumber = event.target.closest('.sector').dataset.sectorNumber;
