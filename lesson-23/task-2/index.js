@@ -63,7 +63,7 @@ const arenaHandler = event => {
   const lineNumber = event.target.closest('.sector__line').dataset.lineNumber;
   const sectorNumber = event.target.closest('.sector').dataset.sectorNumber;
 
-  boardElem.textContent = `S ${seatNumber} - L ${lineNumber} - S ${sectorNumber}`;
+  boardElem.textContent = `S ${sectorNumber} - L ${lineNumber} - S ${seatNumber}`;
 };
 
 arenaElem.addEventListener('click', arenaHandler);
