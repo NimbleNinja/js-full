@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+}
+
+.counter__btn {
+  width: 45px;
+  height: 45px;
+  background: #fff;
+  border: 2px solid grey;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.counter__value {
+  padding: 0px 20px;
+  font-size: 35px;
+}
