@@ -1,5 +1,5 @@
 import { renderTasks } from './renderer.js';
-import { tasks } from './storage.js';
+import { getItem, setItem } from './storage.js';
 
 // input: none
 // return: undefined
@@ -10,10 +10,21 @@ export const updateTask = event => {
 
   const checkboxId = Number(event.target.dataset.id);
 
+  const tasks = getItem('taskList');
+
   // find
   // input: callback (inp: el; ret: true || false)
   // return: element of array || undefined
-  const currentTask = tasks.find(task => task.id === checkboxId);
-  currentTask.done = !currentTask.done;
+  const updatedTasks = tasks.map(task => {
+    if (+task.id === checkboxId) {
+      task.done = !task.done;
+      return task;
+    }
+
+    return task;
+  });
+
+  setItem('taskList', updatedTasks);
+
   renderTasks();
 };

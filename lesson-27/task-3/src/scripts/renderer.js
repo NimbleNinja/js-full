@@ -1,11 +1,20 @@
-import { tasks } from './storage.js';
+import { getItem } from './storage.js';
 
 const listElem = document.querySelector('.list');
 
 const renderTasks = () => {
   listElem.innerHTML = '';
 
-  const tasksElems = tasks
+  // 1. get taskList from local storage getItem('taskList')
+  // 2. if !taskList => return
+
+  const taskList = getItem('taskList');
+
+  if (!taskList) {
+    return;
+  }
+
+  const tasksElems = taskList
     .sort((a, b) => a.done - b.done)
     .map(({ text, done, id }) => {
       const listItemElem = document.createElement('li');
