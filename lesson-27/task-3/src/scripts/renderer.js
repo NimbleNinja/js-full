@@ -8,7 +8,7 @@ const renderTasks = () => {
   // 1. get taskList from local storage getItem('taskList')
   // 2. if !taskList => return
 
-  const taskList = getItem('taskList');
+  const taskList = getItem('tasksList');
 
   if (!taskList) {
     return;

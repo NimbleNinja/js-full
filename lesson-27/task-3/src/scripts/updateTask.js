@@ -10,7 +10,7 @@ export const updateTask = event => {
 
   const checkboxId = Number(event.target.dataset.id);
 
-  const tasks = getItem('taskList');
+  const tasks = getItem('tasksList');
 
   // find
   // input: callback (inp: el; ret: true || false)
@@ -24,7 +24,7 @@ export const updateTask = event => {
     return task;
   });
 
-  setItem('taskList', updatedTasks);
+  setItem('tasksList', updatedTasks);
 
   renderTasks();
 };
