@@ -25,7 +25,7 @@ export const addImage = (imgSrc, callback) => {
 };
 
 // callack function
-const onImageLoaded = (error, imgElem) => {
+export const onImageLoaded = (error, imgElem) => {
   if (error) {
     console.log(error);
     return;
@@ -38,7 +38,7 @@ const onImageLoaded = (error, imgElem) => {
 };
 
 // examples
-addImage(
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
-  onImageLoaded,
-);
+//addImage(
+//  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg',
+//  onImageLoaded,
+//);
