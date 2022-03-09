@@ -22,7 +22,6 @@ const renderTasks = () => {
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       checkbox.checked = done;
-      // add data-id to checkbox
       checkbox.dataset.id = id;
       checkbox.classList.add('list__item-checkbox');
       if (done) {

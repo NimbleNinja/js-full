@@ -11,7 +11,7 @@ export const addTask = () => {
     return;
   }
 
-  const newTask = { text: taskText, done: false, id: Math.random().toString() };
+  const newTask = { text: taskText, done: false, id: Math.floor(Math.random() * 1000).toString() };
 
   const taskList = getItem('tasksList');
 
