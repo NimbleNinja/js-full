@@ -7,7 +7,7 @@
 // add listener load and error events
 // if load sucsess => callback(null, {width, height})
 // else => callback(error)
-const addImage = (imgSrc, callback) => {
+export const addImage = (imgSrc, callback) => {
   // put your code here
   const imgElem = document.createElement('img');
   imgElem.alt = 'My photo';
@@ -17,8 +17,7 @@ const addImage = (imgSrc, callback) => {
   pageElem.append(imgElem);
 
   const onImageLoad = () => {
-    const { width, height } = imgElem;
-    callback(null, { width, height });
+    callback(null, imgElem);
   };
 
   imgElem.addEventListener('load', onImageLoad);
