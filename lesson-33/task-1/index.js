@@ -28,7 +28,7 @@ const renderUserData = userData => {
   });
 };
 
-export const onShowBtnClick = () => {
+const onShowBtnClick = () => {
   const inputValue = inputElem.value;
 
   userRequest(inputValue);
