@@ -15,12 +15,12 @@ function getTaskById(taskId) {
 }
 
 //examples;
-getTasksList().then(tasksList => {
-  console.log(tasksList); // array of the task objects - [ {'id':'1', 'done':false ... }, {'id':'2', 'done':true ... }, ...]
-});
+//getTasksList().then(tasksList => {
+//  console.log(tasksList); // array of the task objects - [ {'id':'1', 'done':false ... }, {'id':'2', 'done':true ... }, ...]
+//});
 
-getTaskById('3').then(taskData => {
-  console.log(taskData); // {'id':'2', 'done':true ... }
-});
+//getTaskById('3').then(taskData => {
+//  console.log(taskData); // {'id':'2', 'done':true ... }
+//});
 
-//export { getTaskById, getTasksList };
+export { getTaskById, getTasksList };
