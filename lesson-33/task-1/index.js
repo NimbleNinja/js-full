@@ -16,22 +16,22 @@ const userLocationElem = document.querySelector('.user__location');
 const userRequest = userName => {
   const url = `https://api.github.com/users/${userName}`;
 
-  return fetch(url).then(response => renderUserData(response.json()));
+  return fetch(url).then(response => response.json());
 };
 
 const renderUserData = userData => {
-  userData.then(data => {
-    const { avatar_url, name, location } = data;
-    userAvatarElem.src = avatar_url;
-    userNameElem.textContent = name;
-    userLocationElem.textContent = location;
-  });
+  const { avatar_url, name, location } = userData;
+  userAvatarElem.src = avatar_url;
+  userNameElem.textContent = name;
+  userLocationElem.textContent = location;
 };
 
 const onShowBtnClick = () => {
   const inputValue = inputElem.value;
 
-  userRequest(inputValue);
+  userRequest(inputValue).then(userData => {
+    renderUserData(userData);
+  });
 };
 
 showBtnElem.addEventListener('click', onShowBtnClick);
