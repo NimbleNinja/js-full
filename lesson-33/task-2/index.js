@@ -9,18 +9,16 @@ function getTasksList() {
 }
 
 function getTaskById(taskId) {
-  return fetch(baseUrl)
-    .then(data => data.json())
-    .then(tasks => tasks.find(task => task.id === taskId));
+  return fetch(`${baseUrl}/${taskId}`).then(data => data.json());
 }
 
 //examples;
-//getTasksList().then(tasksList => {
-//  console.log(tasksList); // array of the task objects - [ {'id':'1', 'done':false ... }, {'id':'2', 'done':true ... }, ...]
-//});
+getTasksList().then(tasksList => {
+  console.log(tasksList); // array of the task objects - [ {'id':'1', 'done':false ... }, {'id':'2', 'done':true ... }, ...]
+});
 
-//getTaskById('3').then(taskData => {
-//  console.log(taskData); // {'id':'2', 'done':true ... }
-//});
+getTaskById('1').then(taskData => {
+  console.log(taskData); // {'id':'2', 'done':true ... }
+});
 
-export { getTaskById, getTasksList };
+//export { getTaskById, getTasksList };
