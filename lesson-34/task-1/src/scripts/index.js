@@ -1,10 +1,8 @@
 import { initTodoListHandlers } from './initTodoListHandlers.js';
 import { renderTasks } from './renderer.js';
-import { getTasksListFromServer } from './serverData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  getTasksListFromServer().then(data => {
-    renderTasks(data);
+  renderTasks().then(() => {
     initTodoListHandlers();
   });
 });
