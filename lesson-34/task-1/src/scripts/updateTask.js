@@ -1,5 +1,5 @@
 import { renderTasks } from './renderer.js';
-import { getItem, setItem } from './storage.js';
+import { getTaskFromServerById, updateTaskOnServer } from './serverData.js';
 
 // input: none
 // return: undefined
@@ -8,23 +8,23 @@ export const updateTask = event => {
     return;
   }
 
-  const checkboxId = Number(event.target.dataset.id);
+  const taskId = Number(event.target.dataset.id);
 
-  const tasks = getItem('tasksList');
-
-  // find
-  // input: callback (inp: el; ret: true || false)
-  // return: element of array || undefined
-  const updatedTasks = tasks.map(task => {
-    if (+task.id === checkboxId) {
-      task.done = !task.done;
-      return task;
-    }
-
-    return task;
-  });
-
-  setItem('tasksList', updatedTasks);
-
-  renderTasks();
+  //get task from server by Id
+  //const tasks = getItem('tasksList');
+  getTaskFromServerById(taskId)
+    .then(task => {
+      const { done } = task;
+      const updatedTask = {
+        ...task,
+        done: !done,
+      };
+      return updatedTask;
+    })
+    .then(updatedTask => updateTaskOnServer(updatedTask))
+    .then(() => renderTasks());
 };
+
+// get task from server by id
+// update task => PUT
+// rerender

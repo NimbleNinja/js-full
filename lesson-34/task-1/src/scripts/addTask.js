@@ -1,5 +1,5 @@
 import { renderTasks } from './renderer.js';
-import { setItem, getItem } from './storage.js';
+import { addTaskToServer } from './serverData.js';
 
 // input: none
 // return: undefined
@@ -11,16 +11,13 @@ export const addTask = () => {
     return;
   }
 
-  const newTask = { text: taskText, done: false, id: Math.floor(Math.random() * 1000).toString() };
+  const newTask = { text: taskText, done: false };
 
-  const taskList = getItem('tasksList');
-
-  if (!taskList) {
-    setItem('tasksList', [newTask]);
-  } else {
-    setItem('tasksList', [...taskList, newTask]);
-  }
-
-  inputElem.value = '';
-  renderTasks();
+  addTaskToServer(newTask).then(() => {
+    inputElem.value = '';
+    renderTasks();
+  });
 };
+
+// ? create task then use fetch
+// ? create task in fetch
