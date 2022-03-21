@@ -1,4 +1,4 @@
-import { initHandlers } from './src/scripts/initHandlers.js';
+import { renderer } from './src/scripts/renderer.js';
 
 // use DOMContentLoaded => show default avatar (https://avatars3.githubusercontent.com/u10001)
 // func showSpinner() before requests
@@ -9,6 +9,5 @@ import { initHandlers } from './src/scripts/initHandlers.js';
 const avatarElem = document.querySelector('.user__avatar');
 avatarElem.src = 'https://avatars3.githubusercontent.com/u10001';
 
-document.addEventListener('DOMContentLoaded', () => {
-  initHandlers();
-});
+const showBtn = document.querySelector('.name-form__btn');
+showBtn.addEventListener('click', () => renderer());
