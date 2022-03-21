@@ -2,7 +2,7 @@ import { showSpinner } from './spinner.js';
 import { getReposList, getUserData } from './workWithServer.js';
 
 export const renderer = () => {
-  showSpinner();
+  showSpinner(true);
 
   const userAvatarElem = document.querySelector('.user__avatar');
   const userNameElem = document.querySelector('.user__name');
@@ -12,7 +12,6 @@ export const renderer = () => {
 
   getUserData(nameFormInputElem.value)
     .then(userData => {
-      console.log(userData);
       const { avatar_url, name, location, repos_url } = userData;
       userAvatarElem.src = avatar_url;
       userNameElem.textContent = name;
@@ -31,10 +30,16 @@ export const renderer = () => {
       repoListElem.replaceChildren(...reposElems);
     })
     .then(() => {
-      showSpinner();
+      showSpinner(false);
+      nameFormInputElem.value = '';
+    })
+    .catch(() => {
+      alert('Failed to load data');
+      showSpinner(false);
     });
 };
 
 // 1. get data from server
 // 2. get all DOM elements
 // 3. render data
+// 4. error => 'Failed to load data'
