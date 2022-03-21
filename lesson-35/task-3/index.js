@@ -6,8 +6,9 @@ import { initHandlers } from './src/scripts/initHandlers.js';
 // fetch(repos_url) => data => {name} => .repo-list.append(repo-list__item)
 // error => alert('Failed to load data')
 
+const avatarElem = document.querySelector('.user__avatar');
+avatarElem.src = 'https://avatars3.githubusercontent.com/u10001';
+
 document.addEventListener('DOMContentLoaded', () => {
-  const avatarElem = document.querySelector('.user__avatar');
-  avatarElem.src = 'https://avatars3.githubusercontent.com/u10001';
   initHandlers();
 });
