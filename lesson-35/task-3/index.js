@@ -1,4 +1,4 @@
-import { initHandlers } from './initHandlers.js';
+import { initHandlers } from './src/scripts/initHandlers.js';
 
 // use DOMContentLoaded => show default avatar (https://avatars3.githubusercontent.com/u10001)
 // func showSpinner() before requests
