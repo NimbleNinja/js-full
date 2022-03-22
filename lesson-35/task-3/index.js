@@ -24,7 +24,7 @@ const onShowBtnHandler = () => {
       const { avatar_url, name, location, repos_url } = userData;
       userAvatarElem.src = avatar_url;
       userNameElem.textContent = name;
-      userLocationElem.textContent = location;
+      userLocationElem.textContent = `from ${location}`;
 
       return repos_url;
     })
