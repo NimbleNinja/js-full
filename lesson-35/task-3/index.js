@@ -41,4 +41,4 @@ const onShowBtnHandler = () => {
 };
 
 const showBtn = document.querySelector('.name-form__btn');
-showBtn.addEventListener('click', () => onShowBtnHandler());
+showBtn.addEventListener('click', onShowBtnHandler);
