@@ -1,4 +1,4 @@
-import { renderReposList } from './src/scripts/renderReposList.js';
+import { cleanReposListElem, renderReposList } from './src/scripts/renderReposList.js';
 import { renderUserData } from './src/scripts/renderUserData.js';
 import { showSpinner } from './src/scripts/spinner.js';
 import { getReposList, getUserData } from './src/scripts/workWithServer.js';
@@ -10,7 +10,6 @@ import { getReposList, getUserData } from './src/scripts/workWithServer.js';
 // error => alert('Failed to load data')
 
 const nameFormInputElem = document.querySelector('.name-form__input');
-const repoListElem = document.querySelector('.repo-list');
 
 const defaultUser = {
   name: '',
@@ -21,7 +20,7 @@ renderUserData(defaultUser);
 
 const onShowBtnHandler = () => {
   showSpinner(true);
-  repoListElem.innerHTML = '';
+  cleanReposListElem();
 
   getUserData(nameFormInputElem.value)
     .then(userData => {
