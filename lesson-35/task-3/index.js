@@ -35,8 +35,8 @@ const onShowBtnHandler = () => {
     .then(() => {
       nameFormInputElem.value = '';
     })
-    .catch(() => {
-      alert('Failed to load data');
+    .catch(err => {
+      alert(err.message);
     })
     .finally(() => showSpinner(false));
 };
