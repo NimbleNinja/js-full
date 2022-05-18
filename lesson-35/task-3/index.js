@@ -9,8 +9,7 @@ import { getReposList, getUserData } from './src/scripts/workWithServer.js';
 // fetch(repos_url) => data => {name} => .repo-list.append(repo-list__item)
 // error => alert('Failed to load data')
 
-const nameFormInputElem = document.querySelector('.name-form__input');
-
+// init render defaultUser
 const defaultUser = {
   name: '',
   location: '',
@@ -18,6 +17,11 @@ const defaultUser = {
 };
 renderUserData(defaultUser);
 
+// button and input
+const nameFormInputElem = document.querySelector('.name-form__input');
+const showBtn = document.querySelector('.name-form__btn');
+
+// handler
 const onShowBtnHandler = () => {
   showSpinner(true);
   cleanReposListElem();
@@ -40,5 +44,4 @@ const onShowBtnHandler = () => {
     .finally(() => showSpinner(false));
 };
 
-const showBtn = document.querySelector('.name-form__btn');
 showBtn.addEventListener('click', onShowBtnHandler);

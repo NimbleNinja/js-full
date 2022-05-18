@@ -122,3 +122,53 @@ export const shmoment = date => {
     },
   };
 };
+
+// Michael
+//const shmoment = date => {
+//  let time = new Date(date);
+//  return {
+//    years(num) {
+//      time.setFullYear(time.getFullYear() + num);
+//    },
+
+//    months(num) {
+//      time.setMonth(time.getMonth() + num);
+//    },
+
+//    days(num) {
+//      time.setDate(time.getDate() + num);
+//    },
+
+//    hours(num) {
+//      time.setHours(time.getHours() + num);
+//    },
+
+//    minutes(num) {
+//      time.setMinutes(time.getMinutes() + num);
+//    },
+
+//    seconds(num) {
+//      time.setSeconds(time.getSeconds() + num);
+//    },
+
+//    milliseconds(num) {
+//      time.setMilliseconds(time.getMilliseconds() + num);
+//    },
+
+//    add(int, value) {
+//      this[int](value);
+
+//      return this;
+//    },
+
+//    subtract(int, value) {
+//      this[int](-value);
+
+//      return this;
+//    },
+
+//    result() {
+//      return time;
+//    },
+//  };
+//};
